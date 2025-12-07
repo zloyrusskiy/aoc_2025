@@ -16,7 +16,8 @@ fn parse_input() -> Vec<(u64, u64)> {
         .lines()
         .map(|line| {
             let line_val = line.expect("Unable to read line");
-            line_val.split(",")
+            line_val
+                .split(",")
                 .filter(|range_str| !range_str.is_empty())
                 .map(|range_str| {
                     let (from, to) = range_str.split_once('-').unwrap();
@@ -51,7 +52,9 @@ fn calc_part2(input: &Vec<(u64, u64)>) -> u64 {
             let n_str = n.to_string();
             let invalid_id = (1..=(n_str.len() / 2))
                 .filter(|&pat_len| n_str.len() % pat_len == 0)
-                .find(|&pat_len| n_str.matches(&n_str[0..pat_len]).count() == n_str.len() / pat_len);
+                .find(|&pat_len| {
+                    n_str.matches(&n_str[0..pat_len]).count() == n_str.len() / pat_len
+                });
 
             if invalid_id.is_some() {
                 invalid_ids_sum += n;

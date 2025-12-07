@@ -53,13 +53,11 @@ fn calc_part2(input: &Vec<i32>) -> u64 {
 
         let dist = rot.abs();
 
-        let steps_to_zero =
-            if cur == 0 {
-                100
-            } else {
-                if rot > 0 {100 - cur} else {cur}
-            }
-        ;
+        let steps_to_zero = if cur == 0 {
+            100
+        } else {
+            if rot > 0 { 100 - cur } else { cur }
+        };
 
         if dist >= steps_to_zero {
             zero_seen += 1 + (dist - steps_to_zero) / 100;

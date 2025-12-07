@@ -68,5 +68,4 @@ fn calc_part2(input: &Vec<Vec<u64>>) -> u64 {
             res
         })
         .sum::<u64>()
-
 }

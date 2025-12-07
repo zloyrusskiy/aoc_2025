@@ -1,9 +1,14 @@
 use std::io;
 
 const DIFFS: [(i32, i32); 8] = [
-    (-1, -1), (-1, 0), (-1, 1),
-    (0, -1),           (0, 1),
-    (1, -1),  (1, 0),  (1, 1),
+    (-1, -1),
+    (-1, 0),
+    (-1, 1),
+    (0, -1),
+    (0, 1),
+    (1, -1),
+    (1, 0),
+    (1, 1),
 ];
 
 fn main() {
@@ -48,7 +53,12 @@ fn get_neighbours(r: usize, c: usize, input: &Vec<Vec<char>>) -> Vec<(usize, usi
     for (dr, dc) in DIFFS {
         let nr = r as i32 + dr;
         let nc = c as i32 + dc;
-        if nr >= 0 && nr < input.len() as i32 && nc >= 0 && nc < input[0].len() as i32 && input[nr as usize][nc as usize] == '@' {
+        if nr >= 0
+            && nr < input.len() as i32
+            && nc >= 0
+            && nc < input[0].len() as i32
+            && input[nr as usize][nc as usize] == '@'
+        {
             neighbours.push((nr as usize, nc as usize));
         }
     }
