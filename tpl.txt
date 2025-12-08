@@ -1,0 +1,32 @@
+use std::io;
+
+struct Input;
+
+fn main() {
+    let input = parse_input();
+    println!("input: {input:?}");
+
+    let part1_res = calc_part1(&input);
+    println!("part1 res {part1_res:?}");
+
+    let part2_res = calc_part2(&input);
+    println!("part2 res {part2_res:?}");
+}
+
+fn parse_input() -> Input {
+    io::stdin()
+        .lines()
+        .map(|line| {
+            let line_val = line.expect("Unable to read line");
+            todo!()
+        })
+        .collect()
+}
+
+fn calc_part1(input: &Input) -> u64 {
+    todo!()
+}
+
+fn calc_part2(input: &Input) -> u64 {
+    todo!()
+}

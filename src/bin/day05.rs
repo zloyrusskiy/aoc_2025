@@ -31,7 +31,6 @@ fn main() {
 
 fn parse_input() -> Input {
     let input_str = io::read_to_string(io::stdin()).unwrap();
-    println!("input_str: {input_str:?}");
     let (ranges_str, ids_str) = input_str.split_once("\r\n\r\n").unwrap();
 
     let ranges = ranges_str
